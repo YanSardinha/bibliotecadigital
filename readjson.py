@@ -5,8 +5,7 @@ import requests
 
 # assigns a JSON string to a variable called coder
 
-with open('C:/Users/yan.sardinha/Desktop/Projetinhos/bibliotecadigital/dados_biblioteca_link_arquivos.json', 'r') as file:
-
+with open('C:/Users/yan.sardinha/Documents/GitHub/bibliotecadigital/dados_biblioteca_link_arquivos.json', 'r') as file:
     data = json.load(file)
 
 '''
@@ -34,5 +33,5 @@ for i in data:
         print(f'Status code: {response.status_code}')
         if response.status_code == 200:
             open(f"tccs/{i['Id']}{extension}", "wb").write(response.content)
-    except:
-        print(f'Algum erro aconteceu:  {response.status_code}')
+    except Exception as e:
+        print(f'Algum erro aconteceu: Resposta: {response.status_code}; Exceção: {str(e)}')
