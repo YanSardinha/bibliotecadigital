@@ -22,6 +22,8 @@ Instale as dependências
 ```bash
   pip install -r requirements.txt
 ```
+
+
 ## Aprendizados
 
 Aprendi como extrair dados de um PDF usando a biblioteca PyPDF2 em Python. Utilizei essa biblioteca para extrair informações de páginas de PDFs e salvá-las em um arquivo JSON. E também a importância de lidar com erros e exceções ao manipular arquivos em Python.
