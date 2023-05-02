@@ -18,11 +18,9 @@ with open('C:/Users/yan.sardinha/Documents/GitHub/bibliotecadigital/dados_biblio
     dict_list = json.load(file)
 
 for id, item in enumerate(dict_list):
-    print(f'ID NORMAL - {id}')
     try:
         id_tcc = item['Id']
         reader = PdfReader(f"C:/Users/yan.sardinha/Documents/GitHub/bibliotecadigital/tccs/{id_tcc}.pdf")
-        print(f'ID DO TCC - {id_tcc}')
         number_of_pages = len(reader.pages)
         i = 0 
         while i < number_of_pages:
