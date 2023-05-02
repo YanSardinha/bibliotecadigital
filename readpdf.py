@@ -13,43 +13,42 @@ import json
 
 begin = 'AGRADECIMENTOS'
 sum = -1
-id = 0
-dict = {}
-with open('C:/Users/yan.sardinha/Desktop/Projetinhos/bibliotecadigital/bibliotecadigital/dados_biblioteca_link_arquivos.json') as file:
-    dict = json.load(file)
+dict_list = []
+with open('C:/Users/yan.sardinha/Documents/GitHub/bibliotecadigital/dados_biblioteca_link_arquivos.json') as file:
+    dict_list = json.load(file)
 
-while id < 3710:
+for id, item in enumerate(dict_list):
+    print(f'ID NORMAL - {id}')
     try:
-        reader = PdfReader(f"C:/Users/yan.sardinha/Desktop/Projetinhos/bibliotecadigital/bibliotecadigital/tccs/{id}.pdf")
+        id_tcc = item['Id']
+        reader = PdfReader(f"C:/Users/yan.sardinha/Documents/GitHub/bibliotecadigital/tccs/{id_tcc}.pdf")
+        print(f'ID DO TCC - {id_tcc}')
         number_of_pages = len(reader.pages)
-        i=0 
-        
+        i = 0 
         while i < number_of_pages:
             page = reader.pages[i]
             text = page.extract_text()
-            i+=1
+            i += 1
             try:
                 idx1 = text.find(begin)
                 if idx1 > 0:
-                    print(f'Opening a file to write, id = {id}')
+                    print(f'Opening a file to write, id = {id_tcc}')
                     res = text[idx1 + len(begin) + 1:]
                     striped = res.strip()
-                    dict[id]['Agradecimentos'] = striped
+                    item['Agradecimentos'] = striped
                     sum += id
                     print('File closed')
             except:
-                print(f'Nothing to be found on id = {id}')
+                print(f'Nothing to be found on id = {id_tcc}')
                 break
     except:
-        print(f'File does not exists, file id = {id}')
+        print(f'File does not exist, file id = {id}')
     
     if sum < 0:
         print(f'"Agradecimentos" not found on id = {id}')
         
-    id += 1
-
-with open('C:/Users/yan.sardinha/Desktop/Projetinhos/bibliotecadigital/bibliotecadigital/dados_biblioteca_link_arquivos.json', 'w') as file:
-    json.dump(dict, file, indent=4)
+with open('C:/Users/yan.sardinha/Documents/GitHub/bibliotecadigital/dados_biblioteca_link_arquivos.json', 'w') as file:
+    json.dump(dict_list, file, indent=4)
 
 
 '''
