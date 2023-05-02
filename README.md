@@ -23,6 +23,7 @@ Instale as dependências
   pip install -r requirements.txt
 ```
 
+Vale lembrar que, ao ler os pdfs, o arquivo json é carregado como uma lista, então o debug que aparece ao executar não necessariamente está relacionado com o id do tcc.
 
 ## Aprendizados
 

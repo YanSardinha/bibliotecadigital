@@ -30,14 +30,14 @@ for id, item in enumerate(dict_list):
             try:
                 idx1 = text.find(begin)
                 if idx1 > 0:
-                    print(f'Opening a file to write, id = {id_tcc}')
+                    print(f'Opening a file to write, id = {id}')
                     res = text[idx1 + len(begin) + 1:]
                     striped = res.strip()
                     item['Agradecimentos'] = striped
                     sum += id
                     print('File closed')
             except:
-                print(f'Nothing to be found on id = {id_tcc}')
+                print(f'Nothing to be found on id = {id}')
                 break
     except:
         print(f'File does not exist, file id = {id}')
