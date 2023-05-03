@@ -45,5 +45,5 @@ Embora seja possível extrair muitas informações de arquivos .doc e .docx usan
 
 # License
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)]([https://choosealicense.com/licenses/mit/](https://github.com/YanSardinha/bibliotecadigital/blob/main/LICENSE))
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/YanSardinha/bibliotecadigital/blob/main/LICENSE)
 
